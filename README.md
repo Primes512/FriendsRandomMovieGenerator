@@ -1,2 +1,3 @@
-# FriendsRandomMovieGenerator
-Movie night between friends. Friends add their top-10 movies which are saved in a database. The app chooses a random movie between the friends top-10 movies. 
+# ejs-demo
+
+This is demo code for a DigitalOcean tutorial here: https://www.digitalocean.com/community/tutorials/how-to-use-ejs-to-template-your-node-application

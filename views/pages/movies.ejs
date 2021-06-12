@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <%- include('../partials/head'); %>
+</head>
+<body class="container">
+
+<header>
+    <%- include('../partials/header'); %>
+</header>
+
+<main>
+<!-- form begins -->
+<form id="form" action="/newMovieList" method="POST">
+    <div>
+        <h1>What are your top 10 favorite movies?</h1>
+        <div class="form-group">
+            <!-- dropdown select -->
+            <select class="form-control" data-style="btn-info" name="friendID" id="friendID">
+                <!-- friend selection options -->
+                <optgroup label="Select Friend" >
+                    <option> 
+                        Select a Friend
+                    </option>
+                    <!-- for loop through API friends -->
+                    <% friends.forEach(function(fren) { %>
+                    <!-- displaying friends on dropdown -->
+                    <option name="friend" value="<%=fren.id%>"><%=fren.firstName %></option>
+                    <% }); %>
+                </optgroup>
+            </select>
+        </div>
+        <!-- inputs for top ten movies -->
+                <div class="form-group">
+                    <input type="text" name="movie1" id="movie1" class="form-control" placeholder="Favorite Movie" required autofocus>
+                </div>
+                <div class="form-group">
+                    <input type="text" name="movie2" id="movie2" class="form-control" placeholder="Favorite Movie" required>
+                </div>
+                <div class="form-group">
+                    <input type="text" name="movie3" id="movie3" class="form-control" placeholder="Favorite Movie" required>
+                </div>
+                <div class="form-group">
+                    <input type="text" name="movie4" id="movie4" class="form-control" placeholder="Favorite Movie" required>
+                </div>
+                <div class="form-group">
+                    <input type="text" name="movie5" id="movie5" class="form-control" placeholder="Favorite Movie" required>
+                </div>
+                <div class="form-group">
+                    <input type="text" name="movie6" id="movie6" class="form-control" placeholder="Favorite Movie" required>
+                </div>
+                <div class="form-group">
+                    <input type="text" name="movie7" id="movie7" class="form-control" placeholder="Favorite Movie" required>
+                </div>
+                <div class="form-group">
+                    <input type="text" name="movie8" id="movie8" class="form-control" placeholder="Favorite Movie" required>
+                </div>
+                <div class="form-group">
+                    <input type="text" name="movie9" id="movie9" class="form-control" placeholder="Favorite Movie" required>
+                </div>
+                <div class="form-group">
+                    <input type="text" name="movie10" id="movie10" class="form-control" placeholder="Favorite Movie" required>
+                </div>
+                <button type="submit" class="btn btn-primary mb-3">Submit</button>
+    </div>
+</form>
+
+
+</main>
+
+<footer>
+    <%- include('../partials/footer'); %>
+</footer>
+
+</body>
+</html>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <%- include('../partials/head'); %>
+</head>
+
+<body class="container">
+
+    <header>
+        <%- include('../partials/header'); %>
+    </header>
+
+    <main>
+        <div>
+            <h2>Please select friends attending Movie Night</h2>
+            <p>Hit submit at the end to select a random movie for tonight.</p>
+            <!-- final decision form -->
+            <form action="/finalDecision" method="post" class="jumbotron">
+                <!-- loop through friends -->
+                <% friends.forEach(function(fren) { %>
+                    <!-- create checkbox selection -->
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" name="<%=fren.id%>" id="<%=fren.id%>">
+                        <label class="form-check-label" for="<%=fren.id%>">
+                            <h6><%=fren.firstName%></h6>
+                        </label>
+                    </div>
+                <% }); %>
+                <!-- submit button -->
+                <button type="submit" class="btn btn-primary mb-3">Submit</button>
+            </form>
+        </div>
+    </main>
+
+    <footer>
+        <%- include('../partials/footer'); %>
+    </footer>
+
+</body>
+
+</html>
